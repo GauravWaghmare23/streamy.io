@@ -4,3 +4,4 @@ dist
 logs/
 logs/*
 logs/server.log
+streamy.io_server/logs/server.log
