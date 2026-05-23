@@ -3,14 +3,20 @@ import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
-import { success } from 'zod';
-import { env } from 'process';
-import loggerMiddleware from "../src/middleware/logger.middleware.js";
+import globalRateLimiter from "./config/rateLimiter.js";
+import loggerMiddleware from "./middleware/logger.middleware.js";
+import errorMiddleware from "./middleware/error.middleware.js";
 
 const app = express();
 
+// Trust first proxy for correct IP logging
+app.set("trust proxy", 1); 
+
 // Use the custom logger middleware for all routes
 app.use(loggerMiddleware);
+
+// Applies global rate limiter to all requests
+app.use(globalRateLimiter);
 
 // Middleware setup
 app.use(cors());
@@ -40,5 +46,9 @@ app.use((req, res) => {
       message: "Route not found",
    });
 });
+
+// Global error handling middleware
+app.use(errorMiddleware);
+
 
 export default app;
