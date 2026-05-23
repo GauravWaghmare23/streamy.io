@@ -5,8 +5,12 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import { success } from 'zod';
 import { env } from 'process';
+import loggerMiddleware from "../src/middleware/logger.middleware.js";
 
 const app = express();
+
+// Use the custom logger middleware for all routes
+app.use(loggerMiddleware);
 
 // Middleware setup
 app.use(cors());
