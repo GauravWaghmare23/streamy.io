@@ -9,13 +9,10 @@ import errorMiddleware from "./middleware/error.middleware.js";
 
 const app = express();
 
-// Trust first proxy for correct IP logging
 app.set("trust proxy", 1); 
 
-// Use the custom logger middleware for all routes
 app.use(loggerMiddleware);
 
-// Applies global rate limiter to all requests
 app.use(globalRateLimiter);
 
 // Middleware setup
@@ -47,7 +44,7 @@ app.use((req, res) => {
    });
 });
 
-// Global error handling middleware
+// Global error handling 
 app.use(errorMiddleware);
 
 

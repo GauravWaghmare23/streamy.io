@@ -3,17 +3,17 @@ configDotenv();
 import { createServer } from "http";
 import app from "./src/app.js";
 import logger from "./src/config/logger.js";
+import connectDB from "./src/config/db.js";
+import mongoose from "mongoose";
 
-// create HTTP server using the Express app
 
 const server = createServer(app);
 
 const PORT = process.env.PORT;
 
-// Start the server and handle potential errors
-
-const startServer = () => {
+const startServer = async () => {
     try {
+        await connectDB();
         server.listen(PORT, () => {
             logger.info(`Server is running on port ${PORT} in ${process.env.NODE_ENV} mode`);
         });
@@ -25,18 +25,18 @@ const startServer = () => {
 
 startServer();
 
-// Handle graceful shutdown on SIGINT and SIGTERM signals
-
-process.on("SIGINT",()=>{
+process.on("SIGINT", async()=>{
     logger.warn("Shutting down server...");
+    await mongoose.connection.close();
     server.close(()=>{
         logger.info("Server shut down gracefully.");
         process.exit(0);
     });
 });
 
-process.on("SIGTERM",()=>{
+process.on("SIGTERM", async()=>{
     logger.warn("Shutting down server...");
+    await mongoose.connection.close();
     server.close(()=>{
         logger.info("Server shut down gracefully.");
         process.exit(0);
