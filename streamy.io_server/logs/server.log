@@ -357,3 +357,19 @@
 {"level":30,"time":"2026-05-24T05:02:51.663Z","msg":"Server is running on port 8000 in development mode"}
 {"level":30,"time":"2026-05-24T05:03:05.584Z","msg":"MongoDB connected : ac-ukjiqmr-shard-00-02.n6btli1.mongodb.net"}
 {"level":30,"time":"2026-05-24T05:03:05.589Z","msg":"Server is running on port 8000 in development mode"}
+{"level":40,"time":"2026-05-24T05:06:27.908Z","msg":"MongoDb disconnected..."}
+{"level":30,"time":"2026-05-24T05:14:19.088Z","msg":"MongoDB connection established..."}
+{"level":40,"time":"2026-05-24T05:15:22.821Z","msg":"Shutting down server..."}
+{"level":40,"time":"2026-05-24T05:15:22.828Z","msg":"MongoDb disconnected..."}
+{"level":50,"time":"2026-05-24T05:16:14.688Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":30,"time":"2026-05-24T05:16:23.373Z","msg":"MongoDB connected : ac-ukjiqmr-shard-00-00.n6btli1.mongodb.net"}
+{"level":30,"time":"2026-05-24T05:16:23.375Z","msg":"Server is running on port 8000 in development mode"}
+{"level":40,"time":"2026-05-24T05:16:41.813Z","msg":"MongoDb disconnected..."}
+{"level":50,"time":"2026-05-24T05:16:56.055Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":50,"time":"2026-05-24T05:18:22.006Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":30,"time":"2026-05-24T05:18:34.753Z","msg":"MongoDB connected : ac-ukjiqmr-shard-00-00.n6btli1.mongodb.net"}
+{"level":30,"time":"2026-05-24T05:18:34.757Z","msg":"Server is running on port 8000 in development mode"}
+{"level":50,"time":"2026-05-24T05:18:51.243Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":50,"time":"2026-05-24T05:19:40.956Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":50,"time":"2026-05-24T05:19:50.663Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
+{"level":50,"time":"2026-05-24T05:20:02.905Z","message":"MongoDB connection failed","error":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.n6btli1.mongodb.net"}
